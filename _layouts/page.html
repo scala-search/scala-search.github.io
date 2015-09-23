@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ site.url }}/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://scala-search.org">Scaps</a>
+      </div>
+      <ul class="nav navbar-nav">
+        {% assign url = page.url|remove:'index.html' %}
+        {% for link in site.navigation %}
+          <li {% if url == link.url %}class="active"{% endif %}{% if page.active == link.url %}class="active"{% endif %}>
+              <a href="{{link.url}}" title="{{link.name}}">{{link.text}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+      </div>
+    </div>
+  </div>
+  <div id="footer" style="text-align: center; color: #777; background-color: #f8f8f8; border-top: 1px solid #e7e7e7;">
+    <div style="margin-top: 4px; margin-bottom: 4px;">by Lukas Wegmann, <a href="http://ifs.hsr.ch">IFS</a> | <a href="https://twitter.com/Luegg1">Twitter</a></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+navigation:
+- text: "About"
+  url: "/"
+- text: "Manual"
+  url: "/manual/"
+- text: "Blog"
+  url: "/blog/"
+- text: "<span class='glyphicon glyphicon-link' aria-hidden='true'></span> Source"
+  url: "https://github.com/scala-search/scaps"
